@@ -1,11 +1,12 @@
-import {useLoader} from '@react-three/fiber';
+import {useLoader, ambientLight} from '@react-three/fiber';
 import {useEffect} from 'react';
 import {BufferAttribute, Color} from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+
 const Virus1 = ()=>{
 
-    const gltf = useLoader(GLTFLoader, process.env.PUBLIC_URL + "models/virus1.glb");
+    const gltf = useLoader(GLTFLoader, process.env.PUBLIC_URL + "models/Starr.glb");
 
     useEffect(()=>{
         if(gltf) return;
@@ -24,10 +25,13 @@ const Virus1 = ()=>{
 
     return(
 
+        <>
 
-       
+<ambientLight />
+<pointLight position={[0, 20, 10]} intensity={3.5} />
+
         <primitive object={gltf.scene}/>
-
+        </>
        
     )
 

@@ -5,7 +5,8 @@ import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
 import { OrbitControls } from "@react-three/drei";
 import Scene from './Scene';
 import ComplexRigidBody from "./ComplexRigidBody";
-// import Virus1 from './Virus1';
+import Virus1 from './Virus1';
+
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
       <Suspense>
         <Physics debug>
           <OrbitControls />
-          {/* <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
-      */}
+          <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
+    
           <RigidBody colliders={"hull"} restitution={2}>
             <Torus />
           </RigidBody>
@@ -30,7 +31,8 @@ const App = () => {
 
 {/* //////////////////// */}
 
-        {/* <Virus1 /> */}
+        <Virus1   />
+       
 
      </Suspense>
     </Canvas>
